@@ -1,37 +1,41 @@
-import React, { useState } from "react";
-import { useMutation, useQueryClient } from "@tanstack/react-query";
-import { useNavigate } from "react-router-dom";
+import { useState } from 'react';
+import { useMutation, useQueryClient } from '@tanstack/react-query';
+import { useNavigate } from 'react-router-dom';
 
-import { deleteStudent } from "../../api/students";
-import { deleteTeacher } from "../../api/teachers";
-import { deleteGuardian } from "../../api/guardians";
-import { deleteClass } from "../../api/classes";
+import { deleteStudent } from '../../api/students';
+import { deleteTeacher } from '../../api/teachers';
+import { deleteGuardian } from '../../api/guardians';
+import { deleteClass } from '../../api/classes';
 
-import BasicModalContainer from "./ui/BasicModalContainer";
-import PrimaryButton from "../ui/PrimaryButton";
-import LoadingSpinner from "../ui/LoadingSpinner";
+import BasicModalContainer from './ui/BasicModalContainer';
+import PrimaryButton from '../ui/PrimaryButton';
 
 interface DeleteModalProps {
   id: number;
-  type: "student" | "teacher" | "guardian" | "class";
+  type: 'student' | 'teacher' | 'guardian' | 'class';
   isOpen: boolean;
   onClose: () => void;
 }
 
-export default function DeleteModal({ id, type, isOpen, onClose }: DeleteModalProps) {
+export default function DeleteModal({
+  id,
+  type,
+  isOpen,
+  onClose,
+}: DeleteModalProps) {
   const [isDeleting, setIsDeleting] = useState(false);
   const navigate = useNavigate();
   const queryClient = useQueryClient();
 
   function getMutation(id: number) {
     switch (type) {
-      case "student":
+      case 'student':
         return deleteStudent(id);
-      case "teacher":
+      case 'teacher':
         return deleteTeacher(id);
-      case "guardian":
+      case 'guardian':
         return deleteGuardian(id);
-      case "class":
+      case 'class':
         return deleteClass(id);
     }
   }
@@ -40,7 +44,7 @@ export default function DeleteModal({ id, type, isOpen, onClose }: DeleteModalPr
     mutationFn: (id: number) => getMutation(id),
     onSuccess: () => {
       queryClient.invalidateQueries({
-        queryKey: [type === "class" ? type + "es" : type + "s"],
+        queryKey: [type === 'class' ? type + 'es' : type + 's'],
       });
     },
   });
@@ -71,14 +75,22 @@ export default function DeleteModal({ id, type, isOpen, onClose }: DeleteModalPr
             color="bg-slate-500"
             onclick={() => {
               onClose();
-              navigate(type === "class" ? `/${type}es` : `/${type}s`);
+              navigate(type === 'class' ? `/${type}es` : `/${type}s`);
               setIsDeleting(false);
             }}
           />
         ) : (
           <>
-            <PrimaryButton title="Cancel" color="bg-slate-500" onclick={onClose} />
-            <PrimaryButton title="Remove" color="bg-red-600" onclick={() => remove(id)} />
+            <PrimaryButton
+              title="Cancel"
+              color="bg-slate-500"
+              onclick={onClose}
+            />
+            <PrimaryButton
+              title="Remove"
+              color="bg-red-600"
+              onclick={() => remove(id)}
+            />
           </>
         )}
       </div>

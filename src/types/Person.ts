@@ -1,1 +1,1 @@
-export type Person = "student"| "teacher" | "guardian"
+export type Person = 'student' | 'teacher' | 'guardian';

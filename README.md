@@ -40,6 +40,7 @@ The backend is developed using **TypeScript and Express**, following RESTful API
 ![PostgreSQL](https://img.shields.io/badge/PostgreSQL-316192?style=for-the-badge&logo=postgresql&logoColor=white)
 
 Key goals of the project:
+
 - Practice relational database design
 - Implement clean RESTful APIs
 - Manage real-world entity relationships
@@ -52,6 +53,7 @@ Key goals of the project:
 ## Students
 
 The Students section manages:
+
 - Create, view, update, and delete student records
 - Associate students with guardians and classes
 
@@ -62,6 +64,7 @@ The Students section manages:
 ## Guardians
 
 The Guardians section manages parent/guardian information, including:
+
 - Contact details
 - Relationships to one or more students
 
@@ -72,6 +75,7 @@ The Guardians section manages parent/guardian information, including:
 ## Teachers
 
 Teachers can be managed through this module with features such as:
+
 - Teacher profile creation and updates
 - Assignment to one or multiple classes
 - Relational enforcement with class records
@@ -83,6 +87,7 @@ Teachers can be managed through this module with features such as:
 ## Classes
 
 The Classes module handles:
+
 - Class creation and updates
 - Student and teacher associations
 - Current grades for each student
@@ -94,6 +99,7 @@ The Classes module handles:
 ## Future Improvements
 
 Planned enhancements include:
+
 - Implement Winston logging
 - Integrating attendance tracking for students within classes
 - Implementing full CRUD functionality for class schedules

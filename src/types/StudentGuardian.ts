@@ -1,8 +1,8 @@
-import { GuardianRelationship } from "./GuardianRelationship";
+import type { GuardianRelationship } from './GuardianRelationship';
 
 export interface StudentGuardian {
-    studentId: number,
-    guardianId: number,
-    relationship: GuardianRelationship,
-    isPrimary?: boolean
+  studentId: number;
+  guardianId: number;
+  relationship: GuardianRelationship;
+  isPrimary?: boolean;
 }

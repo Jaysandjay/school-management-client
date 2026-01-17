@@ -1,6 +1,6 @@
-import React, { useState, type ReactNode } from "react";
-import { ChevronDownIcon, ChevronUpIcon } from "@heroicons/react/24/solid";
-import { Link } from "react-router-dom";
+import { useState } from 'react';
+import { ChevronDownIcon, ChevronUpIcon } from '@heroicons/react/24/solid';
+import { Link } from 'react-router-dom';
 
 interface DropdownFolderProps {
   title: string;

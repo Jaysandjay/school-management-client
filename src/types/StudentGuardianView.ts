@@ -1,10 +1,10 @@
-import { GuardianRelationship } from "./GuardianRelationship";
+import type { GuardianRelationship } from './GuardianRelationship';
 
 export interface StudentGuardianView {
-    studentId: number,
-    guardianId: number,
-    firstName: string,
-    lastName: string,
-    relationship: GuardianRelationship,
-    isPrimary?: boolean
+  studentId: number;
+  guardianId: number;
+  firstName: string;
+  lastName: string;
+  relationship: GuardianRelationship;
+  isPrimary?: boolean;
 }

@@ -1,5 +1,4 @@
-import React from "react";
-import StatsCard from "../components/ui/StatsCard";
+import StatsCard from '../components/ui/StatsCard';
 
 export default function Dashboard() {
   return (

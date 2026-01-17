@@ -1,17 +1,17 @@
-import React from "react";
+import React from 'react';
 
 interface FormSelectProps {
   label: string;
   name: string;
   value?: string | number;
-  options: { value: string; label: string }[]; 
+  options: { value: string; label: string }[];
   onChange: (e: React.ChangeEvent<HTMLSelectElement>) => void;
 }
 
 export default function FormDropDownInput({
   label,
   name,
-  value = "",
+  value = '',
   options,
   onChange,
 }: FormSelectProps) {

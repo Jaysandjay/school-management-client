@@ -1,2 +1,5 @@
-
-export type GuardianRelationship = "Mother" | "Father" | "Legal Guardian" | "Other"
+export type GuardianRelationship =
+  | 'Mother'
+  | 'Father'
+  | 'Legal Guardian'
+  | 'Other';

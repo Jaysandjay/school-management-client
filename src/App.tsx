@@ -1,27 +1,25 @@
-import { Routes, Route } from "react-router-dom";
-import Dashboard from "./pages/Dashboard"
+import { Routes, Route } from 'react-router-dom';
+import Dashboard from './pages/Dashboard';
 
 // Students
-import StudentsRecords from "./pages/students/StudentsRecords";
-import StudentDetails from "./pages/students/StudentDetails";
-import StudentAdd from "./pages/students/StudentAdd";
+import StudentsRecords from './pages/students/StudentsRecords';
+import StudentDetails from './pages/students/StudentDetails';
+import StudentAdd from './pages/students/StudentAdd';
 
 // Guardians
-import GuardiansRecords from "./pages/guardians/GuardiansRecords";
-import GuardianDetails from "./pages/guardians/GuardianDetails";
-import GuardianAdd from "./pages/guardians/GuardianAdd";
+import GuardiansRecords from './pages/guardians/GuardiansRecords';
+import GuardianDetails from './pages/guardians/GuardianDetails';
+import GuardianAdd from './pages/guardians/GuardianAdd';
 
 // Teachers
-import TeachersRecords from "./pages/teachers/TeachersRecords";
-import TeacherDetails from "./pages/teachers/TeacherDetails";
-import TeacherAdd from "./pages/teachers/TeacherAdd";
+import TeachersRecords from './pages/teachers/TeachersRecords';
+import TeacherDetails from './pages/teachers/TeacherDetails';
+import TeacherAdd from './pages/teachers/TeacherAdd';
 
 // Classes
-import ClassesRecords from "./pages/classes/ClassesRecords";
-import ClassDetails from "./pages/classes/ClassDetails";
-import ClassesAdd from "./pages/classes/ClassesAdd";
-
-
+import ClassesRecords from './pages/classes/ClassesRecords';
+import ClassDetails from './pages/classes/ClassDetails';
+import ClassesAdd from './pages/classes/ClassesAdd';
 
 export default function App() {
   return (

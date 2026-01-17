@@ -1,17 +1,16 @@
-import React from "react";
-import { useQuery } from "@tanstack/react-query";
-import { useNavigate } from "react-router-dom";
+import { useQuery } from '@tanstack/react-query';
+import { useNavigate } from 'react-router-dom';
 
-import { fetchClasses } from "../../api/classes";
-import { fetchStudents } from "../../api/students";
-import { fetchTeachers } from "../../api/teachers";
-import { fetchGuardians } from "../../api/guardians";
+import { fetchClasses } from '../../api/classes';
+import { fetchStudents } from '../../api/students';
+import { fetchTeachers } from '../../api/teachers';
+import { fetchGuardians } from '../../api/guardians';
 
-import PrimaryButton from "./PrimaryButton";
+import PrimaryButton from './PrimaryButton';
 
 interface StatCardProps {
   title: string;
-  type: "student" | "teacher" | "guardian" | "class";
+  type: 'student' | 'teacher' | 'guardian' | 'class';
 }
 
 export default function StatsCard({ title, type }: StatCardProps) {
@@ -19,25 +18,27 @@ export default function StatsCard({ title, type }: StatCardProps) {
 
   function getQueryFn() {
     switch (type) {
-      case "student":
+      case 'student':
         return fetchStudents;
-      case "teacher":
+      case 'teacher':
         return fetchTeachers;
-      case "guardian":
+      case 'guardian':
         return fetchGuardians;
-      case "class":
+      case 'class':
         return fetchClasses;
     }
   }
 
-  const { data = [], isLoading, isError, error } = useQuery({
-    queryKey: [type === "class" ? "classes" : type + "s"],
+  const {
+    data = []
+  } = useQuery({
+    queryKey: [type === 'class' ? 'classes' : type + 's'],
     queryFn: getQueryFn(),
   });
 
   function pushRoute() {
-    if (type === "class") {
-      navigate("/classes");
+    if (type === 'class') {
+      navigate('/classes');
     } else {
       navigate(`/${type}s`);
     }
@@ -45,14 +46,14 @@ export default function StatsCard({ title, type }: StatCardProps) {
 
   function getAmountType() {
     switch (type) {
-      case "student":
-        return "Enrolled:";
-      case "teacher":
-        return "Employed:";
-      case "guardian":
-        return "Registered:";
-      case "class":
-        return "Available:";
+      case 'student':
+        return 'Enrolled:';
+      case 'teacher':
+        return 'Employed:';
+      case 'guardian':
+        return 'Registered:';
+      case 'class':
+        return 'Available:';
     }
   }
 
@@ -64,13 +65,11 @@ export default function StatsCard({ title, type }: StatCardProps) {
         <p className="text-2xl text-purple-600">{data.length}</p>
       </div>
       <PrimaryButton
-        onclick={() =>
-          pushRoute()
-        }
+        onclick={() => pushRoute()}
         title={`View ${
-          type === "class"
-            ? "Classes"
-            : type.charAt(0).toUpperCase() + type.slice(1) + "s"
+          type === 'class'
+            ? 'Classes'
+            : type.charAt(0).toUpperCase() + type.slice(1) + 's'
         }`}
       />
     </div>
