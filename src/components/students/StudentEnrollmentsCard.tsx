@@ -21,6 +21,7 @@ export default function StudentEnrollmentsCard({
             studentId={studentId}
             enrolled={false}
             emptyMessage="No available classes"
+            maxHeight='max-h-80'
           />
         ) : (
           <StudentEnrolledClassesList
@@ -28,6 +29,7 @@ export default function StudentEnrollmentsCard({
             enrolled={true}
             checked={true}
             emptyMessage="Not currently enrolled in any classes"
+            maxHeight='max-h-80'
           />
         )}
         <div className="mt-5 w-full flex justify-end">

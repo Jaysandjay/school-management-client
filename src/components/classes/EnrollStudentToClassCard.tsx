@@ -16,8 +16,9 @@ export default function EnrollStudentsToClassCard({
     useState(false);
 
   return (
-    <div>
-      <BasicContainer title="Enrolled Students" width="w-full">
+      <BasicContainer title="Enrolled Students" width="w-full" height='h-full'>
+        <div className="min-h-0 flex flex-col h-full flex-1">
+
         {isViewingAssignableStudents ? (
           <StudentList
             id={id}
@@ -52,7 +53,8 @@ export default function EnrollStudentsToClassCard({
             />
           )}
         </div>
+        </div>
       </BasicContainer>
-    </div>
+
   );
 }

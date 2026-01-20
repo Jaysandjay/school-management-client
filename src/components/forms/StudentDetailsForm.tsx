@@ -92,20 +92,24 @@ export default function StudentDetailsForm({
         value={gradeLevel}
         onChange={(e) => setGradeLevel(parseInt(e.target.value))}
       />
-      <SuccessModal
-        title="Success"
-        message={successMessage({
-          firstName,
-          lastName,
-          dateOfBirth,
-          gradeLevel,
-        })}
-        isOpen={isSuccessModalOpen}
-        onClose={() => {
-          setIsSuccessModalOpen(false);
-          clearInputs();
-        }}
-      />
+
+      {isSuccessModalOpen && (
+        <SuccessModal
+          title="Success"
+          message={successMessage({
+            firstName,
+            lastName,
+            dateOfBirth,
+            gradeLevel,
+          })}
+          isOpen={isSuccessModalOpen}
+          onClose={() => {
+            setIsSuccessModalOpen(false);
+            clearInputs();
+          }}
+        />
+
+      )}
       {toggle && (
         <PrimaryButton title="Cancel" color="bg-red-600" onclick={toggle} />
       )}

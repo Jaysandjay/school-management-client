@@ -1,3 +1,4 @@
+import React from "react";
 
 interface FormInputProps {
   label: string;
@@ -9,7 +10,8 @@ interface FormInputProps {
   error?: boolean;
   onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
 }
-export default function FormInput({
+
+const FormInput: React.FC<FormInputProps> = ({
   pattern,
   label,
   name,
@@ -18,7 +20,7 @@ export default function FormInput({
   placeholder = '',
   error = false,
   onChange,
-}: FormInputProps) {
+}: FormInputProps)=>{
   return (
     <div className="flex flex-col mb-2">
       <label className="text-sm font-medium text-slate-700 mb-1">{label}</label>
@@ -29,13 +31,14 @@ export default function FormInput({
         onChange={onChange}
         placeholder={placeholder}
         {...(pattern ? { pattern } : {})}
-        required={true}
-        className={`border px-4 py-2 rounded shadow-sm focus:outline-none focus:ring-1 text-sm ${
+        // required={true}
+        className={`border px-4 py-2 rounded text-sm ${
           error
-            ? 'border-red-600 focus:border-red-600'
-            : 'border-slate-300 focus:border-blue-500'
+            ? 'border-red-600'
+            : 'border-slate-300'
         }`}
       />
     </div>
   );
 }
+export default React.memo(FormInput);

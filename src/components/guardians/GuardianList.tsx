@@ -10,9 +10,10 @@ import AssignGuardianToStudentModal from '../modals/AssignGuardianToStudentModal
 
 interface GuradianListProps {
   studentId?: number;
+  maxHeight?: string
 }
 
-export default function GuardianList({ studentId }: GuradianListProps) {
+export default function GuardianList({ studentId, maxHeight }: GuradianListProps) {
   const [isAssigningGuardian, setIsAssigningGuardian] = useState(false);
   const [selectedGuardian, setSelectedGuardian] =
     useState<GuardianRecord | null>(null);
@@ -50,6 +51,7 @@ export default function GuardianList({ studentId }: GuradianListProps) {
             setIsAssigningGuardian(true);
           }}
           addButtonTitle="Assign"
+          maxHeight={maxHeight}
         />
       ) : (
         <EmptyMessage message="No registered Guardians" />

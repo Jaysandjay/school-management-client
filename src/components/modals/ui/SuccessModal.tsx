@@ -1,18 +1,20 @@
+import React from 'react';
 import BasicModalContainer from './BasicModalContainer';
 
 interface SuccessModalProps {
   title: string;
-  message: string;
+  message?: string;
   isOpen: boolean;
   onClose: () => void;
 }
 
-export default function SuccessModal({
+
+const SuccessModal: React.FC<SuccessModalProps> = ({
   title,
   message,
   isOpen,
   onClose,
-}: SuccessModalProps) {
+}: SuccessModalProps) => {
   if (!isOpen) return null;
 
   return (
@@ -28,3 +30,4 @@ export default function SuccessModal({
     </BasicModalContainer>
   );
 }
+export default React.memo(SuccessModal);

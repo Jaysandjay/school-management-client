@@ -17,6 +17,7 @@ interface StudentEnrolledClassesListProps {
   enrolled: boolean;
   emptyMessage: string;
   checked?: boolean;
+  maxHeight?: string
 }
 
 export default function StudentEnrolledClassesList({
@@ -24,6 +25,7 @@ export default function StudentEnrolledClassesList({
   emptyMessage,
   studentId,
   enrolled,
+  maxHeight
 }: StudentEnrolledClassesListProps) {
   const [isRemovingClass, setIsRemovingClass] = useState(false);
   const [selectedClass, setSelectedClass] = useState<CourseRecord | null>(null);
@@ -71,6 +73,7 @@ export default function StudentEnrolledClassesList({
           addButtonColor={enrolled ? 'bg-red-600' : 'bg-green-600'}
           addButtonTitle={enrolled ? 'Remove' : 'Enroll'}
           checked={checked}
+          maxHeight={maxHeight}
         />
       ) : (
         <div className="w-full flex justify-center h-5 items-center">

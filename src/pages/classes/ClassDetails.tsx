@@ -44,10 +44,12 @@ export default function ClassPage() {
           <ClassTeacherCard id={id} />
         </div>
         <div className="w-full flex gap-4">
-          <div className="flex-2 min-w-0 h-full">
+          <div className="flex-1/3 min-w-0 h-full">
             <StudentsGradesList id={id} />
           </div>
-          <EnrollStudentsToClassCard id={id} />
+          <div className='flex-2/3 min-w-0 h-full'> 
+            <EnrollStudentsToClassCard id={id} />
+          </div>
         </div>
         <AssignTeacherCard id={id} />
       </main>

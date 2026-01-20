@@ -19,7 +19,7 @@ export default function AssignedGuardiansToStudentCard({
     <div>
       <BasicContainer title="Guardians" width="w-full">
         {isViewingAssignableGuardians ? (
-          <GuardianList studentId={studentId} />
+          <GuardianList studentId={studentId} maxHeight='max-h-80' />
         ) : (
           <StudentGuardiansList id={studentId} />
         )}

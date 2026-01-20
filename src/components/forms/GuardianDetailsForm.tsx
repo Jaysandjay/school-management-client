@@ -98,15 +98,18 @@ export default function GuardianDetailsForm({
 
       {mutation.isPending && <LoadingSpinner />}
       {mutation.error && 'Error Adding Guardian'}
-      <SuccessModal
-        title="Guardian Added"
-        message={`${firstName} ${lastName} has been registered`}
-        isOpen={isSuccessModalOpen}
-        onClose={() => {
-          setIsSuccessModalOpen(false);
-          clearInputs();
-        }}
-      />
+      {isSuccessModalOpen && (
+        <SuccessModal
+          title="Guardian Added"
+          message={`${firstName} ${lastName} has been registered`}
+          isOpen={isSuccessModalOpen}
+          onClose={() => {
+            setIsSuccessModalOpen(false);
+            clearInputs();
+          }}
+        />
+
+      )}
     </FormContainer>
   );
 }

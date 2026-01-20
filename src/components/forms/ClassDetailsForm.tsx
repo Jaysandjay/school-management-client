@@ -109,19 +109,22 @@ export default function ClassDetailsForm({
       )}
       {mutation.isPending && <LoadingSpinner />}
       {mutation.error && 'Error Adding Class'}
-      <SuccessModal
-        title="Class Added"
-        message={successMessage({
-          className,
-          gradeLevel,
-          capacity: parseInt(capacity),
-        })}
-        isOpen={isSuccessModalOpen}
-        onClose={() => {
-          setIsSuccessModalOpen(false);
-          clearInputs();
-        }}
-      />
+      {isSuccessModalOpen && (
+        <SuccessModal
+          title="Class Added"
+          message={successMessage({
+            className,
+            gradeLevel,
+            capacity: parseInt(capacity),
+          })}
+          isOpen={isSuccessModalOpen}
+          onClose={() => {
+            setIsSuccessModalOpen(false);
+            clearInputs();
+          }}
+        />
+
+      )}
     </FormContainer>
   );
 }
