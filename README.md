@@ -1,12 +1,12 @@
-# School Management Client
-A React client application for managing school data.
+
 
 <a id="readme-top"></a>
 
 <br />
 
 <div align="center">
-  <h3 align="center">School Management App</h3>
+  <img width="68" height="71" alt="image" src="https://github.com/user-attachments/assets/b451651d-b63a-4dfa-87a6-ff0fae07b2a3" />
+  <h1 align="center">School Management App</h1>
 
 
   <p align="center">
