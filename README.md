@@ -1,11 +1,13 @@
-# School Management App
+# School Management Client
+A React client application for managing school data.
+
 <a id="readme-top"></a>
 
 <br />
 
 <div align="center">
   <h3 align="center">School Management App</h3>
-  
+
 
   <p align="center">
     An administrative platform engineered to manage complex relational data structures for educational institutions.
