@@ -1,3 +1,4 @@
+# School Management App
 <a id="readme-top"></a>
 
 <br />
