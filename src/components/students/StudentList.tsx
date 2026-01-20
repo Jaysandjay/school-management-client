@@ -99,7 +99,7 @@ export default function StudentList({
   ] as const;
 
   return (
-    <div>
+    <div className='h-full min-h-0 flex-1'>
       {isError && <p>Error..</p>}
       {isLoading ? (
         <LoadingSpinner />

@@ -27,7 +27,7 @@ export async function updateGuardian(
   updatedGuardian: Guardian,
 ) {
   console.log('Updating Guardian....');
-  const res = await fetch(`${API_URL}/guardiand/${guardianId}`, {
+  const res = await fetch(`${API_URL}/guardians/${guardianId}`, {
     method: 'PUT',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify(updatedGuardian),

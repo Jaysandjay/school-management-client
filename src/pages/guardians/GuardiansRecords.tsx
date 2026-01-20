@@ -8,7 +8,7 @@ import EmptyMessage from '../../components/cards/EmptyMessage';
 
 export default function GuardiansRecords() {
   const { data, isLoading, isError } = useQuery({
-    queryKey: ['guardian'],
+    queryKey: ['guardians'],
     queryFn: fetchGuardians,
   });
   const columns = [
