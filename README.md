@@ -5,8 +5,6 @@
 <div align="center">
   <h3 align="center">School Management App</h3>
   
-  <img width="45" height="45" alt="image" src="https://github.com/user-attachments/assets/8509459f-860d-46fa-9875-8575274907b1" />
-
 
   <p align="center">
     An administrative platform engineered to manage complex relational data structures for educational institutions.
